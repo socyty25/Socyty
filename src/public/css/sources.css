@@ -1,0 +1,84 @@
+/* Instruction */
+.instruction-container {
+    background-color: #1e293b;
+    background-image: linear-gradient(
+        145deg,
+        rgba(30, 41, 59, 0.8) 0%,
+        rgba(47, 53, 66, 0.8) 100%
+    );
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid #334155;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    margin: 20px auto;
+    z-index: 50;
+}
+
+.cardtext {
+    background-color: #162035;
+    padding: 10px;
+    border-left: 5px solid #00a6fb;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.cardtext h2{
+    font-size: 1.25rem;
+}
+
+.link-buttons {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.link-buttons li {
+    margin: 8px 0;
+}
+
+.link-buttons a {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    background-color: #00a6fb;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.link-buttons a:hover {
+    background-color: #007bb5;
+}
+
+.link-buttons2 {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.link-buttons2 li {
+    margin: 6px 0;
+}
+
+.link-buttons2 a {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    background-color: #22c55e;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.link-buttons2 a:hover {
+    background-color: #16a34a;
+}
