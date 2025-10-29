@@ -56,40 +56,51 @@ With cyber threats increasing globally, both individuals and organizations face 
 🔗 [https://socyty.my.id](https://socyty.my.id)
 
 ---
-## Local Setup
-### (Minimum) Recommended Specification
-- **Windows 10 / MacOS / Ubuntu 22.04+**
-- **CPU 2 Cores**
-- **RAM 4 GB**
-- **Storage 8 GB**
 
-### Requirements
-- **Docker Compose v2**
-- **Docker**
-- **Git**
-- **Port 80** - Required for application routing (Traefik/Nginx)
-- **Port 9999** - Traefik Dashboard (can be changed)
-- **Port 3306** - MySQL
+## 🚀 Local Development Setup
 
-### Deployment
-1. **Clone the Repository**
+### ✅ Minimum Recommended Specifications
+| Component | Requirement |
+|----------|-------------|
+| Operating System | **Windows 10** / **macOS** / **Ubuntu 22.04+** |
+| CPU | **2 Cores** |
+| RAM | **4 GB** |
+| Storage | **8 GB** free space |
+
+---
+
+### 📦 Required Software
+Make sure the following are installed **before setup**:
+
+| Requirement | Description |
+|------------|-------------|
+| **Docker** | Required to run the application environment |
+| **Docker Compose v2** | Used to orchestrate containers |
+| **Git** | Used to clone the repository |
+| **Ports** | `80` (Web) · `9999` (Traefik Dashboard) · `3306` (MySQL) |
+
+---
+
+### 🛠 Deployment Steps
+
+#### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/socyty25/Socyty.git
 cd Socyty
 ```
-
-2. **Run the Setup Script**<br>
-**Windows:**
+#### 2️⃣ Run the Setup Script
+- **Windows:**
 ```bash
 ./setup.bat
 ```
 
-**macOS / Linux / WSL:**
+- **macOS / Linux / WSL:**
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
-#### This script will automatically:
+
+### This script will automatically:
 - Build Docker containers
 - Start all services
 - Copying .env.example -> .env
