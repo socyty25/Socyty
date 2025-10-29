@@ -56,6 +56,25 @@ With cyber threats increasing globally, both individuals and organizations face 
 🔗 [https://socyty.my.id](https://socyty.my.id)
 
 ---
+## Local Setup
+### (Minimum) Recommended Specification
+- **Windows 10 / MacOS / Ubuntu 22.04+**
+- **CPU 2 Cores**
+- **RAM 4 GB**
+- **Storage 8 GB**
+
+### Requirements
+- **Docker Compose v2**
+- **Docker**
+- **Git**
+- **Port 80** - Required for application routing (Traefik/Nginx)
+- **Port 9999** - Traefik Dashboard (can be changed)
+- **Port 3306** - MySQL
+
+### Deployment
+
+
+---
 
 ## 👥 Authors
 
