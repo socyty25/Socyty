@@ -5,7 +5,12 @@ RUN apt-get update && apt-get install -y \
     zip unzip git curl libzip-dev libonig-dev \
     && docker-php-ext-install pdo_mysql mbstring zip
 
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm
+    
 # Copy Composer binary into container
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
+
