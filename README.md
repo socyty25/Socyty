@@ -78,7 +78,7 @@ Make sure the following are installed **before setup**:
 | **Docker Compose v2** | Used to orchestrate containers |
 | **Git** | Used to clone the repository |
 | **Ports** | `80` (Web) · `9999` (Traefik Dashboard) · `3306` (MySQL) |
-- **Ports Component can be change**
+- *Note: Ports can be change*
 
 ---
 
