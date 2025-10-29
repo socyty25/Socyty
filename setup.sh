@@ -15,10 +15,6 @@ docker exec laravel-app test -f .env || docker exec laravel-app cp .env.example 
 echo "📦 Installing Composer dependencies..."
 docker exec laravel-app composer install --no-interaction --prefer-dist
 
-echo "🎨 Installing Node dependencies & building project..."
-docker exec laravel-app npm install
-docker exec laravel-app npm run build
-
 echo "🔑 Generating APP_KEY..."
 docker exec laravel-app php artisan key:generate --force
 
