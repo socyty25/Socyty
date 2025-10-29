@@ -21,11 +21,6 @@ REM --- COMPOSER ---
 echo 📦 Installing PHP dependencies (Composer)...
 docker exec laravel-app composer install --no-interaction --prefer-dist
 
-REM --- NODE / VITE ---
-echo 🎨 Installing Node dependencies and building assets...
-docker exec laravel-app npm install
-docker exec laravel-app npm run build
-
 REM --- APPLICATION KEY ---
 echo 🔑 Generating Application Key...
 docker exec laravel-app php artisan key:generate --force
@@ -48,3 +43,4 @@ echo ✅ SETUP COMPLETE!
 echo 🌐 Visit: http://socyty.127.0.0.1.nip.io
 echo ==========================================
 pause
+
