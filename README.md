@@ -1,5 +1,8 @@
 # 🛡️ Socyty: A Gamified Cybersecurity Awareness Platform
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c8ff2c24-b983-4a10-af34-9292106e8351" />
+
+
 ## 📘 Overview
 
 Say goodbye to tedious cybersecurity awareness training! **Socyty** is a free, interactive, and gamified platform that redefines how employees and individuals learn cybersecurity awareness. It transforms a traditionally dry subject into an engaging, practical, and measurable experience, building the first and most crucial line of defense: people.
