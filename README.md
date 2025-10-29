@@ -72,7 +72,32 @@ With cyber threats increasing globally, both individuals and organizations face 
 - **Port 3306** - MySQL
 
 ### Deployment
+1. **Clone the Repository**
+```bash
+git clone https://github.com/socyty25/Socyty.git
+cd Socyty
+```
 
+2. **Run the Setup Script**
+**Windows:**
+```bash
+./setup.bat
+```
+
+**macOS / Linux / WSL:**
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+#### This script will automatically:
+- Build Docker containers
+- Start all services
+- Copying .env.example -> .env
+- Install Composer dependencies
+- Install Blade Icons
+- Generate App Key
+- Run migrations + seeders
+- Clear cache
 
 ---
 
