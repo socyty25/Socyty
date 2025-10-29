@@ -78,7 +78,7 @@ git clone https://github.com/socyty25/Socyty.git
 cd Socyty
 ```
 
-2. **Run the Setup Script**
+2. **Run the Setup Script**<br>
 **Windows:**
 ```bash
 ./setup.bat
