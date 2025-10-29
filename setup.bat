@@ -5,56 +5,46 @@ echo       SOCYTY LOCAL ENVIRONMENT SETUP
 echo ==========================================
 echo.
 
-REM Check if Docker is running
-echo Checking Docker service...
-docker info >nul 2>&1
-IF %ERRORLEVEL% NEQ 0 (
-    echo [ERROR] Docker is not running.
-    echo Please start Docker Desktop and rerun this script.
-    pause
-    exit /b
-)
-
-echo.
-echo Building and starting Docker containers...
+REM --- START DOCKER ---
+echo 🐳 Starting Docker containers...
 docker-compose up -d --build
 
 echo.
-echo Waiting for containers to initialize...
+echo ⏳ Waiting for containers to initialize...
 timeout /t 10 >nul
 
-echo.
-echo Installing Composer dependencies inside container...
-docker exec -it laravel-app composer install
+REM --- ENSURE .env EXISTS ---
+echo 🔍 Checking .env in container...
+docker exec laravel-app test -f .env || docker exec laravel-app cp .env.example .env
 
-echo.
-echo Installing Blade Icons packages...
-docker exec -it laravel-app composer require postare/blade-mdi
-docker exec -it laravel-app composer require mallardduck/blade-boxicons
+REM --- COMPOSER ---
+echo 📦 Installing PHP dependencies (Composer)...
+docker exec laravel-app composer install --no-interaction --prefer-dist
 
-echo.
-echo Generating Application Key...
-docker exec -it laravel-app php artisan key:generate
+REM --- NODE / VITE ---
+echo 🎨 Installing Node dependencies and building assets...
+docker exec laravel-app npm install
+docker exec laravel-app npm run build
 
-echo.
-echo Running Database Migration and Seeder...
-docker exec -it laravel-app php artisan migrate:fresh --seed
+REM --- APPLICATION KEY ---
+echo 🔑 Generating Application Key...
+docker exec laravel-app php artisan key:generate --force
 
-echo.
-echo Setting storage permissions...
-docker exec -it laravel-app chmod -R 777 storage bootstrap/cache
+REM --- MIGRATIONS ---
+echo 🗄️ Running database migrations + seed...
+docker exec laravel-app php artisan migrate:fresh --seed --force
 
-echo.
-echo Clearing Laravel caches...
-docker exec -it laravel-app php artisan optimize:clear
+REM --- PERMISSIONS ---
+echo 🔐 Setting permissions...
+docker exec laravel-app chmod -R 777 storage bootstrap/cache
+
+REM --- CLEAR CACHE ---
+echo 🧹 Clearing caches...
+docker exec laravel-app php artisan optimize:clear
 
 echo.
 echo ==========================================
 echo ✅ SETUP COMPLETE!
-echo Application is ready to use.
-echo.
-echo Open in browser:
-echo     http://socyty.127.0.0.1.nip.io
+echo 🌐 Visit: http://socyty.127.0.0.1.nip.io
 echo ==========================================
-echo.
 pause
